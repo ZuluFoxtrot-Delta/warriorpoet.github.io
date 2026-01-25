@@ -303,13 +303,15 @@
       if (!iso) throw new Error("No commit date found");
 
       const d = new Date(iso);
-      target.textContent = d.toLocaleString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit"
-      });
+     target.textContent = d.toLocaleString(undefined, {
+  year: "numeric",
+  month: "short",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false
+});
+
     } catch (e) {
       // Clean fallback: don't break the page if API is blocked/rate-limited.
       target.textContent = "unavailable";
